@@ -22,5 +22,6 @@ from baseapp import views as baseappviews
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', baseappviews.test, name='landing_pg'),
+    path('', baseappviews.test, name='index'),
+    path('about/', baseappviews.about, name='about'),
 ]

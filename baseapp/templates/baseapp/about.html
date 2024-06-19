@@ -1,3 +1,4 @@
+{% load static %}
 
 <!doctype html>
 <html lang="en">
@@ -9,7 +10,7 @@
     <title>Tutee an Education Category Responsive Web Template| About.</title>
 
     <!-- Template CSS -->
-    <link rel="stylesheet" href="assets/css/style-liberty.css">
+    <link rel="stylesheet" href="{% static 'assets/css/style-liberty.css' %}">
     <link href="//fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   </head>
@@ -20,7 +21,7 @@
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-dark stroke">
 				<h1><a class="navbar-brand" href="index.html">
-					<span class="fa fa-book"></span> Tutee
+					<span class="fa fa-book"></span> elmentrix
 				</a></h1>
 				<!-- if logo is image enable this   
 			<a class="navbar-brand" href="#index.html">
@@ -35,7 +36,7 @@
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item @@home__active">
-							<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="{%url 'index' %}">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item active">
 							<a class="nav-link" href="about.html">About</a>
@@ -75,9 +76,9 @@
 	  </header>
 	<!--/header-->
 </section>
-<script src="assets/js/jquery-3.3.1.min.js"></script> <!-- Common jquery plugin -->
+<script src="{% static 'vendor/jquery/jquery-3.3.1.min.js' %}"></script> <!-- Common jquery plugin -->
 <!--bootstrap working-->
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="{% static 'vendor/bootstrap/bootstrap.min.js' %}"></script>
 <!--bootstrap working//-->
 <!--/MENU-JS-->
 <script>
@@ -181,16 +182,14 @@ $(function () {
             <div class="row">
                 <div class="col-lg-7">
                     <div class="foot-best">
-                        <img src="assets/images/a1.jpg" alt="product" class="img-responsive about-me">
-                        <img src="assets/images/a2.jpg" alt="product" class="img-responsive about-me">
+                        <img src="{% static 'assets/images/a1.jpg' %}" alt="product" class="img-responsive about-me">
+                        <img src="{% static 'assets/images/a2.jpg' %}" alt="product" class="img-responsive about-me">
                     </div>
                 </div>
                 <div class="my-bio col-lg-5">
                     <h3>Discover the true significance of knowledge.</h3>
-                    <p class="para mb-3">Lorem ipsum dolor sit amet deleniti dolore sequi labore similique vitae
-                        .inventore deleniti dolore sequi labore similique vitae quae est.</p>
-                    <p class="para mb-3">Cum quo maiores asperiores sequi error alias molli aliquid pr Lorem ipsum dolor
-                        sit amet conse ctetur adipi sicing elit.inve ntore dele niti dolore sequi labore.</p>
+                    <p class="para mb-3">We began as four passionate mechatronics engineers searching for the true significance of knowledge. Driven by curiosity and a desire to master emerging technologies, we delved into countless books, experiments, and innovations. We soon realized that true knowledge is about application, creativity, and empowerment, not just acquiring information.</p>
+                    <p class="para mb-3">Inspired by this realization and the individuals we met who shared our thirst for understanding, we founded elmentrix. Our aim is to provide expert-led, high-quality tech education accessible to everyone, with zero prerequisites. We empower individuals to learn and apply their knowledge in transformative ways. Join us in discovering the true significance of knowledge.</p>
                 </div>
 
             </div>
@@ -259,30 +258,29 @@ $(function () {
 <div class="row">
 	<div class="my-bio cwp4-text col-lg-6">
 			<h3>Doing the right thing, at the right time.</h3>
-			<p class="para mt-3 mb-lg-4 "> Adip isci exe rcit atio nem amet dolore expe dita repel
-				 lendus Lorem ipsum dolor, sit amet conse ctetur. Odio mole stiae ex aut poss imus.</p>
+			<p class="para mt-3 mb-lg-4 "> We are committed to excellence in every aspect of our work. Here’s how we measure up:</p>
 			<div class="details-details">
 				<div class="my-bar-grids">
-					<h4>Professionality<span> 90% </span></h4>
+					<h4>Professionality<span> 97% </span></h4>
 
 					<div class="progress">
-						<div class="progress-bar progress-bar-striped bg-color" role="progressbar" style="width: 80% ;height:.3rem;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" div="">
+						<div class="progress-bar progress-bar-striped bg-color" role="progressbar" style="width: 97% ;height:.3rem;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" div="">
 						</div>
 					</div>
 				</div>
 				<div class="my-bar-grids">
-					<h4>Guarantee<span> 60% </span></h4>
+					<h4>Guarantee<span> 90% </span></h4>
 
 					<div class="progress">
-						<div class="progress-bar progress-bar-striped bg-color" role="progressbar" style="width: 60% ;height:.3rem;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" div="">
+						<div class="progress-bar progress-bar-striped bg-color" role="progressbar" style="width: 90% ;height:.3rem;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" div="">
 						</div>
 					</div>
 				</div>
 				<div class="my-bar-grids">
-					<h4>Key Of Success<span> 70% </span></h4>
+					<h4>Key Of Success<span> 95% </span></h4>
 
 					<div class="progress">
-						<div class="progress-bar progress-bar-striped bg-color" role="progressbar" style="width: 70% ;height:.3rem;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" div="">
+						<div class="progress-bar progress-bar-striped bg-color" role="progressbar" style="width: 95% ;height:.3rem;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" div="">
 						</div>
 					</div>
 				</div>
@@ -290,7 +288,7 @@ $(function () {
 			</div>
 	</div>
 <div class="col-lg-6 ">
-	<img src="assets/images/b4.jpg" alt="product" class="img-responsive about-me">
+	<img src="{% static 'assets/images/b4.jpg' %}" alt="product" class="img-responsive about-me">
 </div>
 </div>
 		</div>
@@ -305,11 +303,11 @@ $(function () {
 			  <div class="col-lg-3 col-md-6 col-sm-6 team-team">
 				<div class="our-team">
 				  <div class="picture">
-					<img src="assets/images/t1.jpg" alt="product" class="img-responsive about-me">
+					<img src="{% static 'assets/images/t1.jpg' %}" alt="product" class="img-responsive about-me">
 				  </div>
 				  <div class="team-content">
-					<h3 class="name">Madison</h3>
-					<h4 class="title">Management</h4>
+					<h3 class="name">Kiran Jose</h3>
+					<h4 class="title">Position</h4>
 				  </div>
 				  <ul class="social">
 					<li><a href="url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
@@ -322,11 +320,11 @@ $(function () {
 				  <div class="col-lg-3 col-md-6 col-sm-6 team-team">
 				<div class="our-team">
 				  <div class="picture">
-					<img src="assets/images/t2.jpg" alt="product" class="img-responsive about-me">
+					<img src="{% static 'assets/images/t2.jpg' %}" alt="product" class="img-responsive about-me">
 				  </div>
 				  <div class="team-content">
-					<h3 class="name">Harper</h3>
-					<h4 class="title">Director</h4>
+					<h3 class="name">Anshad</h3>
+					<h4 class="title">Position</h4>
 				  </div>
 				  <ul class="social">
 					<li><a href="url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
@@ -339,11 +337,11 @@ $(function () {
 				  <div class="col-lg-3 col-md-6 col-sm-6 team-team">
 				<div class="our-team">
 				  <div class="picture">
-					<img src="assets/images/t3.jpg" alt="product" class="img-responsive about-me">
+					<img src="{% static 'assets/images/t3.jpeg' %}" alt="product" class="img-responsive about-me">
 				  </div>
 				  <div class="team-content">
-					<h3 class="name">Isabella</h3>
-					<h4 class="title">Administrative</h4>
+					<h3 class="name">Fasil</h3>
+					<h4 class="title">Position</h4>
 				  </div>
 				  <ul class="social">
 					<li><a href="url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
@@ -356,11 +354,11 @@ $(function () {
 				  <div class="col-lg-3 col-md-6 col-sm-6 team-team">
 				<div class="our-team">
 				  <div class="picture">
-					<img src="assets/images/t4.jpg" alt="product" class="img-responsive about-me">
+					<img src="{% static 'assets/images/t4.jpg' %}" alt="product" class="img-responsive about-me">
 				  </div>
 				  <div class="team-content">
-					<h3 class="name">Charlotte</h3>
-					<h4 class="title">Officers</h4>
+					<h3 class="name">Shahal</h3>
+					<h4 class="title">Position</h4>
 				  </div>
 				  <ul class="social">
 					<li><a href="url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>

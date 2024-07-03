@@ -11,6 +11,7 @@
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/style-liberty.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/extra.css' %}">
     <link href="//fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
   </head>
@@ -20,7 +21,7 @@
 	<header id="site-header">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-dark stroke">
-				<h1><a class="navbar-brand" href="index.html">
+				<h1><a class="navbar-brand" href="{%url 'index' %}">
 					<span class="fa fa-book"></span> elmentrix
 				</a></h1>
 				<!-- if logo is image enable this   
@@ -39,8 +40,9 @@
 							<a class="nav-link" href="{%url 'index' %}">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item active">
-							<a class="nav-link" href="about.html">About</a>
+							<a class="nav-link" href="#">About</a>
 						</li>
+						<!--
 						<li class="nav-item @@services__active">
 							<a class="nav-link" href="services.html">Services</a>
 						</li>
@@ -54,12 +56,13 @@
 								<a class="dropdown-item" href="landing-page.html">Landing page</a>
 							</div>
 						</li>
-						<!-- <li class="nav-item @@contact__active">
+
+						<li class="nav-item @@contact__active">
 							<a class="nav-link" href="contact.html"></a>
 						</li> -->
-							<li class="nav-item mr-2">
-								<a href="contact.html" class="btn btn-primary register d-lg-block btn-style">Contact</a>
-						</li>
+						<li class="nav-item mr-2">
+							<a href="{% url 'index' %}#courses-section" class="btn btn-primary register d-lg-block btn-style">Courses</a>
+					</li>
 					</ul>
 				</div>
 				        <!-- toggle switch for light and dark theme -->
@@ -167,7 +170,7 @@ $(function () {
             <div class="container">   
             <div class="breadcrumbs-sub">
                 <ul class="breadcrumbs-custom-path">
-                    <li class="right-side propClone"><a href="index.html" class="editContent">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a> <p></li>
+                    <li class="right-side propClone"><a href="{%url 'index' %}" class="editContent">Home <span class="fa fa-angle-right" aria-hidden="true"></span></a> <p></li>
                     <li class="active editContent">About</li>
                 </ul>
             </div>
@@ -207,46 +210,39 @@ $(function () {
             <div class="icon-back">
               <span class="fa fa-volume-control-phone"></span></div>
 
-            <h3 class="title-big">free call support</h3>
+            <h3 class="title-big">24x7 Call Support</h3>
 
           </div>
-          <p class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, soluta impedit. consectetur
-            adipisicing elit
+          <p class="para">Our dedicated support team is available around the clock to assist you with any queries or issues, ensuring you get the help you need when you need it.</p>
 
         </div>
         <div class="para-para col-lg-6 col-md-6">
           <div class="two-grids">
             <div class="icon-back"><span class="fa fa-diamond"></span></div>
-            <h3 class="title-big">the best Discount</h3>
+            <h3 class="title-big">Certification</h3>
 
           </div>
-          <p class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, soluta impedit. consectetur
-            adipisicing elit
-            Consequatur.</p>
+          <p class="para">Earn recognized certifications provided by Applied Knowledge Sciences, United States of America, enhancing your resume and career prospects.</p>
         </div>
         <div class=" para-para col-lg-6 col-md-6">
           <div class="two-grids">
             <div class="icon-back"><span class="fa fa-headphones"></span></div>
 
-            <h3 class="title-big">Ask Consultancy</h3>
+            <h3 class="title-big">Regular Updates</h3>
 
           </div>
 
-          <p class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, soluta impedit. consectetur
-            adipisicing elit
-            Consequatur.</p>
+          <p class="para">Stay ahead with regularly updated course content that reflects the latest trends and developments in the tech industry.</p>
         </div>
         <div class=" para-para col-lg-6 col-md-6">
           <div class="two-grids">
             <div class="icon-back"><span class="fa fa-book"></span></div>
 
-            <h3 class="title-big">largest library</h3>
+            <h3 class="title-big">Free Resources</h3>
 
           </div>
 
-          <p class="para">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo, soluta impedit. consectetur
-            adipisicing elit
-            Consequatur.</p>
+          <p class="para">Benefit from a variety of free resources, including eBooks, webinars, and tutorials, to complement your learning journey.</p>
         </div>
       </div>
     </div>
@@ -310,9 +306,9 @@ $(function () {
 					<h4 class="title">Position</h4>
 				  </div>
 				  <ul class="social">
-					<li><a href="url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
-					<li><a href="url"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
-					<li><a href="url"><span class="fa fa-google" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a></li>
 					<li><a href="url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
 				  </ul>
 				</div>
@@ -327,9 +323,9 @@ $(function () {
 					<h4 class="title">Position</h4>
 				  </div>
 				  <ul class="social">
-					<li><a href="url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
-					<li><a href="url"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
-					<li><a href="url"><span class="fa fa-google" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a></li>
 					<li><a href="url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
 				  </ul>
 				</div>
@@ -344,9 +340,9 @@ $(function () {
 					<h4 class="title">Position</h4>
 				  </div>
 				  <ul class="social">
-					<li><a href="url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
-					<li><a href="url"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
-					<li><a href="url"><span class="fa fa-google" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-github" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a></li>
 					<li><a href="url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
 				  </ul>
 				</div>
@@ -361,77 +357,100 @@ $(function () {
 					<h4 class="title">Position</h4>
 				  </div>
 				  <ul class="social">
-					<li><a href="url"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
-					<li><a href="url"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
-					<li><a href="url"><span class="fa fa-google" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a></li>
 					<li><a href="url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
 				  </ul>
 				</div>
 			  </div>
+
+
+			  <!--moonsoor placeholder-->
+			  <div class="col-lg-3 col-md-6 col-sm-6 team-team padding-top center-container">
+				<div class="our-team">
+				  <div class="picture">
+					<img src="{% static 'assets/images/t5.jpg' %}" alt="product" class="img-responsive about-me">
+				  </div>
+				  <div class="team-content">
+					<h3 class="name">Dr. Mansoor Ali</h3>
+					<h4 class="title">Position</h4>
+				  </div>
+				  <ul class="social">
+					<li><a href="url"><span class="fa fa-facebook-square" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-twitter-square" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-linkedin-square" aria-hidden="true"></span></a></li>
+					<li><a href="url"><span class="fa fa-instagram" aria-hidden="true"></span></a></li>
+				  </ul>
+				</div>
+			  </div>
+
+
+
+
+
 			</div>
 		  </div>
 		  </div>
 	</div>
 	<!-- /team-grids -->
-</section>
-<section class="w3l-footer-29-main">
-	<div class="footer-29 py-5 ">
-	  <div class="container">
-		<div class="grid-col-4 footer-top-29">
-			<div class="footer-list-29 footer-1">
-				<h2 class="footer-title-29">About Us</h2>
-<p class="para">Ipsum dolor sit amet, consectetur adipisicing elit. Itaque quis repellendus nesciunt quam cupiditate explicabo modi non error consequatur sunt molestiae laboriosam adipisci voluptatem possimus</p>
-				<div class="main-social-footer-29">
-					<a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
-					<a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
-					<a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
-					<a href="#google-plus" class="google-plus"><span class="fa fa-google-plus"></span></a>
-					<a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+	<section class="w3l-footer-29-main">
+		<div class="footer-29 py-5 ">
+		  <div class="container">
+			<div class="grid-col-4 footer-top-29">
+				<div class="footer-list-29 footer-1">
+					<h2 class="footer-title-29">About Us</h2>
+	<p class="para">Founded by four driven mechatronics engineers, our mission is to provide expert-led tech education that prepares professionals for success, validated through rigorous standards.</p>
+					<div class="main-social-footer-29">
+						<a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
+						<a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
+						<a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
+						<a href="#whatsapp" class="google-plus"><span class="fa fa-whatsapp"></span></a>
+						<a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
+					</div>
+				</div>
+				<div class="footer-list-29 footer-2">
+					<ul>
+						<h6 class="footer-title-29">Latest News</h6>
+						<li><a href="#pages">Stay updated with our newest developments, achievements, and industry insights in tech education and innovation.</a>
+						<h5><a href="#pages">by Admin</a></h5></li>
+					</ul>
+				</div>
+				<div class="footer-list-29 footer-3">
+					<div class="properties">
+						<h6 class="footer-title-29">Contact Us</h6>
+	
+					<ul>
+						<li><p><span class="fa fa-map-marker"></span>West, Kaithapoyil Bridge, Kaithappoyil, Kozhikode, Kerala.</p></li>
+				<li><p><span class="fa fa-map-marker"></span>Malabar College of Engineering and Technology,
+				# Via, Pallur PO Near Wadakancherry, Cheruthuruthy Rd, 
+				Desamangalam, Kerala.</p></li>
+						<li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> +91 1234567891</a></li>
+						<li><a href="mailto:founders.elmentrix@gmail.com" class="mail"><span class="fa fa-envelope-open-o"></span> founders.elmentrix@gmail.com</a></li>
+					</ul>
+				</div>
+				</div>
+				<div class="footer-list-29 footer-4">
+					<ul>
+						<h6 class="footer-title-29">Useful Links</h6>
+						<li><a href="#url">Forums</a></li>
+						<li><a href="#url">Our Teachers</a></li>
+						<li><a href="#url">Upcoming Events</a></li>
+						<li><a href="#url">Popular Courses</a></li>
+						<li><a href="#url">Verified Course</a></li>
+					</ul>
 				</div>
 			</div>
-			<div class="footer-list-29 footer-2">
-				<ul>
-					<h6 class="footer-title-29">Latest News</h6>
-					<li><a href="#pages">Programming language</a>
-					<h5><a href="#pages">by Admin</a></h5></li>
-					<li><a href="#pages">Graduate Admissions</a><h5><a href="#pages">by Admin</a></h5></li>
-					<li><a href="#pages">Committed to educating</a><h5><a href="#pages">by Admin</a></h5></li>
-				</ul>
-			</div>
-			<div class="footer-list-29 footer-3">
-				<div class="properties">
-					<h6 class="footer-title-29">Contact Us</h6>
-
-				<ul>
-					<li><p><span class="fa fa-map-marker"></span>California, #32841 block,
-						#221DRS 75 West Rock,
-						Maple Building, UK.</p></li>
-					<li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> +(21)-255-999-8888</a></li>
-					<li><a href="mailto:estate-mail@support.com" class="mail"><span class="fa fa-envelope-open-o"></span> example@mail.com</a></li>
+			<div class="bottom-copies row">
+				<p class="copy-footer-29 col-lg-8">© 2024 elmentriX. All rights reserved | Developed by <a href="https://www.instagram.com/fasil_kppl/">Co-founder Fasil</a>  <a href="https://www.instagram.com/fasil_kppl/"><i class="fa fa-instagram"></i></a></p>
+				<ul class="list-btm-29 col-lg-4">
+					<li><a href="#link">Privacy policy</a></li>
+					<li><a href="#link">Terms of service</a></li>
 				</ul>
 			</div>
 			</div>
-			<div class="footer-list-29 footer-4">
-				<ul>
-					<h6 class="footer-title-29">Useful Links</h6>
-					<li><a href="#url">Forums</a></li>
-					<li><a href="#url">Our Teachers</a></li>
-					<li><a href="#url">Upcoming Events</a></li>
-					<li><a href="#url">Popular Courses</a></li>
-					<li><a href="#url">Verified Course</a></li>
-				</ul>
-			</div>
 		</div>
-		<div class=" bottom-copies row">
-			<p class="copy-footer-29 col-lg-8">© 2020 Tutee. All rights reserved.</p>
-			<ul class="list-btm-29 col-lg-4">
-				<li><a href="#link">Privacy policy</a></li>
-				<li><a href="#link">Terms of service</a></li>
-			  </ul>
-		</div>
-		</div>
-	</div>
-  </section>
+	  </section>
 
 <!-- move top -->
 <button onclick="topFunction()" id="movetop" title="Go to top">

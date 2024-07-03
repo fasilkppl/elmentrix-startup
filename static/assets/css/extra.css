@@ -1,0 +1,17 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.padding-top {
+    padding-top: 30px; /* You can adjust the value to your preference */
+}
+
+
+.center-container {
+    margin: 0 auto;
+    width: 50%; /* Adjust the width as needed */
+    max-width: 300px; /* This will help ensure it doesn't get too wide */
+    text-align: center; /* Center the content inside */
+}
+
+

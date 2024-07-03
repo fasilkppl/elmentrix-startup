@@ -8,14 +8,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>elmentriX an Education Category  Responsive Web Template| Home :: Fasil</title>
+    <title>elmentrix</title>
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{% static 'assets/css/style-liberty.css' %}">
     <link href="//fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link href="//fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-	<!-- Instagram icon -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 
   </head>
   <body id="home">
@@ -27,7 +26,7 @@
 				<!--<h1><a class="navbar-brand" href="index.html">
 					<img src="{% static 'assets/images/elmentrix-logo-white.png' %}" alt="elmentrix-logo" 
 					style="width: 220px; height: 65px;"></a></h1>-->
-          <h1><a class="navbar-brand" href="index.html">
+          <h1><a class="navbar-brand" href="#">
             <span class="fa fa-book"></span> elmentrix
           </a></h1>
 				 
@@ -40,16 +39,18 @@
 				<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item @@about__active">
 							<a class="nav-link" href="{% url 'about'%}">About</a>
 						</li>
+            <!--
 						<li class="nav-item @@services__active">
 							<a class="nav-link" href="services.html">Services</a>
 						</li>
+            -->
 							<li class="nav-item mr-2">
-								<a href="contact.html" class="btn btn-primary register d-lg-block btn-style">Contact</a>
+								<a href="#courses-section" class="btn btn-primary register d-lg-block btn-style">Courses</a>
 						</li>
 					</ul>
 				</div>
@@ -158,10 +159,24 @@ $(function () {
               <h5 class=" ">Crafting <br>Tommorrow's Tech!</h5>
               <p class=" ">Empower your future with expert tutoring in emerging technologies. Learn today, lead tomorrow.</p>
               <div >
-                <form class="form-inline forms-gds" action="#" method="post">
-                <input type="email" name="" placeholder="Email" required="">
-                <button class="btn btn-style btn-primary">Subscribe</button>
-              </form>
+                {% if messages %}
+                    {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ message }}
+                            </div>
+                        {% elif message.tags == 'success' %}
+                            <div class="alert alert-success" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            <form class="form-inline forms-gds" action="{% url 'request_call' %}" method="post">
+                {% csrf_token %}
+                <input type="tel" name="phone_number" placeholder="Enter your phone number" required>
+                <button type="submit" class="btn btn-style btn-primary">Request a call</button>
+            </form>
             </div>
           </div>
       </div>
@@ -274,7 +289,7 @@ $(function () {
         </div>
 </section>
 
-<section class="w3l-covers-18">
+<section id="courses-section" class="w3l-covers-18">
         <div class="covers-main editContent">
             <div class="container">
               <div class="main-titles-head ">
@@ -286,27 +301,27 @@ $(function () {
                   <div class="col-lg-4 col-md-6">
                     <img src="{% static 'assets/images/course-1.jpg' %}" alt="product" class="img-responsive ">
                     <div class="img-box">
-                    <h5 class="mb-2"><a href="about.html">Al and Robotics</a></h5>
+                    <h5 class="mb-2"><a href="https://forms.gle/iDpkze3jqEGqkRS49">Al and Robotics</a></h5>
                     <div class="blog-date"> 
-                    <p class="pos-date"><span class="fa fa-calendar mr-1"></span>7 April</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 3286 Views</p></div>
+                    <p class="pos-date"><span class="fa fa-calendar mr-1"></span>15 July</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 3286 Views</p></div>
                     <p class="para">Dive into the future with our AI and Robotics course, designed to explore the latest advancements in artificial intelligence and robotic technologies.</p>
                     </div>
                   </div>
                   <div class=" col-lg-4 col-md-6 top-top2">
                     <img src="{% static 'assets/images/course-2.jpg' %}" alt="product" class="img-responsive ">
                     <div class="img-box">
-                    <h5 class="mb-2"><a href="about.html">Coding and Game Design </a></h5>
+                    <h5 class="mb-2"><a href="https://forms.gle/iDpkze3jqEGqkRS49">Coding and Game Design </a></h5>
                     <div class="blog-date"> 
-                      <p class="pos-date"><span class="fa fa-calendar mr-1"></span>7 April</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 3286 Views</p></div>
+                      <p class="pos-date"><span class="fa fa-calendar mr-1"></span>15 July</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 2568 Views</p></div>
                       <p class="para">Unleash your creativity with our Coding and Game Design course, where you'll learn to develop interactive games and master coding skills.</p>
                   </div>
                 </div>
                   <div class="col-lg-4 col-md-6 top-top">
                     <img src="{% static 'assets/images/course-3.jpg' %}" alt="product" class="img-responsive ">
                     <div class="img-box">
-                    <h5 class="mb-2"><a href="about.html">Data Science with Python</a></h5>
+                    <h5 class="mb-2"><a href="https://forms.gle/iDpkze3jqEGqkRS49">Data Science with Python</a></h5>
                     <div class="blog-date"> 
-                      <p class="pos-date"><span class="fa fa-calendar mr-1"></span>7 April</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 3286 Views</p></div>
+                      <p class="pos-date"><span class="fa fa-calendar mr-1"></span>15 July</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 2748 Views</p></div>
                       <p class="para">Gain valuable insights and analytical skills in our Data Science with Python course, essential for harnessing the power of data.</p>
                   </div>
                   </div>
@@ -314,9 +329,9 @@ $(function () {
 				  <div class="col-lg-4 col-md-6 top-top mt-4">
                     <img src="{% static 'assets/images/course-4.jpg' %}" alt="product" class="img-responsive ">
                     <div class="img-box">
-                    <h5 class="mb-2"><a href="about.html">Digital Marketing</a></h5>
+                    <h5 class="mb-2"><a href="https://forms.gle/iDpkze3jqEGqkRS49">Digital Marketing</a></h5>
                     <div class="blog-date"> 
-                      <p class="pos-date"><span class="fa fa-calendar mr-1"></span>7 April</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 3286 Views</p></div>
+                      <p class="pos-date"><span class="fa fa-calendar mr-1"></span>15 July</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 1943 Views</p></div>
                       <p class="para">Expand your digital presence with our Digital Marketing course, focusing on strategies to reach and engage audiences effectively.</p>
                   </div>
                   </div>
@@ -324,9 +339,9 @@ $(function () {
 				  <div class="col-lg-4 col-md-6 top-top mt-4">
                     <img src="{% static 'assets/images/course-5.jpg' %}" alt="product" class="img-responsive ">
                     <div class="img-box">
-                    <h5 class="mb-2"><a href="about.html">Web and App Development</a></h5>
+                    <h5 class="mb-2"><a href="https://forms.gle/iDpkze3jqEGqkRS49">Web and App Development</a></h5>
                     <div class="blog-date"> 
-                      <p class="pos-date"><span class="fa fa-calendar mr-1"></span>7 April</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 3286 Views</p></div>
+                      <p class="pos-date"><span class="fa fa-calendar mr-1"></span>15 July</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 2358 Views</p></div>
                       <p class="para">Build your digital footprint with our Web and App Development course, covering essential skills for creating websites and apps.</p>
                   </div>
                   </div>
@@ -334,9 +349,9 @@ $(function () {
 				  <div class="col-lg-4 col-md-6 top-top mt-4">
                     <img src="{% static 'assets/images/course-6.jpg' %}" alt="product" class="img-responsive ">
                     <div class="img-box">
-                    <h5 class="mb-2"><a href="about.html">Photography</a></h5>
+                    <h5 class="mb-2"><a href="https://forms.gle/iDpkze3jqEGqkRS49">Photography</a></h5>
                     <div class="blog-date"> 
-                      <p class="pos-date"><span class="fa fa-calendar mr-1"></span>7 April</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 3286 Views</p></div>
+                      <p class="pos-date"><span class="fa fa-calendar mr-1"></span>15 July</p> <p class="pos-date"><span class="fa fa-eye mr-1"></span> 1321 Views</p></div>
                       <p class="para">Capture moments with clarity and creativity in our Photography course, designed to enhance your skills behind the lens.</p>
                   </div>
                   </div>
@@ -360,7 +375,7 @@ $(function () {
 						<h3>Your bright future is our mission!. </h3>
 					<p class="para editContent text ">
 						Our learning process begins with personalized assessment to tailor courses to your needs. Expert-led instruction and hands-on projects ensure practical skill development, backed by continuous support and verified outcomes for your success.</p>
-						<a href="about.html" class="action-button btn mt-lg-5 mt-4">Read more</a>
+						<a href="{% url 'about'%}" class="action-button btn mt-lg-5 mt-4">Read more</a>
 					</div>
 				</div>
 		</div>
@@ -384,9 +399,8 @@ $(function () {
                                     <img class="img-responsive" src="{% static 'assets/images/c3.jpg' %}" alt="image">
                                     <div class="hh14-info">
                                         <h6>Web and App development</h6>
-                                        <p class="para">The personalized approach and expert guidance helped me grasp 
-                                          complex concepts effortlessly. Highly recommend for anyone serious about 
-                                          staying ahead in tech!.</p>
+                                        <p class="para">"It was a great course on web and app development. I learned a lot; it was really helpful and excellently taught. Extremely valuable course for beginners. 
+                                          I gained a lot of knowledge in just one month. Thank you for this wonderful course!"</p>
                                       <h4>Mohammed Swalih</h4>
                                     </div>
 
@@ -423,12 +437,14 @@ $(function () {
                             </div>
                         </li>
                     </ul>
-                    <!-- <div class="arrows">
+                  <!--
+                    <div class="arrows">
                         <label for="slides_1"></label>
                         <label for="slides_2"></label>
                         <label for="slides_3"></label>
                         <label for="slides_4"></label>
-                    </div> -->
+                    </div>
+                    -->
                     <div class="navigation">
                         <div>
                             <label for="slides_1"></label>
@@ -454,7 +470,7 @@ $(function () {
 					<a href="#facebook" class="facebook"><span class="fa fa-facebook"></span></a>
 					<a href="#twitter" class="twitter"><span class="fa fa-twitter"></span></a>
 					<a href="#instagram" class="instagram"><span class="fa fa-instagram"></span></a>
-					<a href="#google-plus" class="google-plus"><span class="fa fa-google-plus"></span></a>
+					<a href="#whatsapp" class="google-plus"><span class="fa fa-whatsapp"></span></a>
 					<a href="#linkedin" class="linkedin"><span class="fa fa-linkedin"></span></a>
 				</div>
 			</div>
@@ -470,10 +486,11 @@ $(function () {
 					<h6 class="footer-title-29">Contact Us</h6>
 
 				<ul>
-					<li><p><span class="fa fa-map-marker"></span>California, #32841 block,
-						#221DRS 75 West Rock,
-						Maple Building, UK.</p></li>
-					<li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> +(21)-255-999-8888</a></li>
+					<li><p><span class="fa fa-map-marker"></span>West, Kaithapoyil Bridge, Kaithappoyil, Kozhikode, Kerala.</p></li>
+            <li><p><span class="fa fa-map-marker"></span>Malabar College of Engineering and Technology,
+            # Via, Pallur PO Near Wadakancherry, Cheruthuruthy Rd, 
+            Desamangalam, Kerala.</p></li>
+					<li><a href="tel:+7-800-999-800"><span class="fa fa-phone"></span> +91 1234567891</a></li>
 					<li><a href="mailto:founders.elmentrix@gmail.com" class="mail"><span class="fa fa-envelope-open-o"></span> founders.elmentrix@gmail.com</a></li>
 				</ul>
 			</div>
@@ -490,7 +507,7 @@ $(function () {
 			</div>
 		</div>
 		<div class="bottom-copies row">
-			<p class="copy-footer-29 col-lg-8">© 2024 elmentriX. All rights reserved | Developed by <a href="https://www.instagram.com/fasil_kppl/">Co-founder Fasil</a>  <a href="https://www.instagram.com/fasil_kppl/"><i class="fab fa-instagram"></i></a></p>
+			<p class="copy-footer-29 col-lg-8">© 2024 elmentriX. All rights reserved | Developed by <a href="https://www.instagram.com/fasil_kppl/">Co-founder Fasil</a>  <a href="https://www.instagram.com/fasil_kppl/"><i class="fa fa-instagram"></i></a></p>
 			<ul class="list-btm-29 col-lg-4">
 				<li><a href="#link">Privacy policy</a></li>
 				<li><a href="#link">Terms of service</a></li>

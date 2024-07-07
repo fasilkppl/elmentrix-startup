@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', baseappviews.test, name='index'),
     path('about/', baseappviews.about, name='about'),
+    path('careers/', baseappviews.careers, name='careers'),
     path('request-call/', baseappviews.request_call_view, name='request_call'),
 ]
 

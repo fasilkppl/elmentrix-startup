@@ -7,11 +7,23 @@ html {
 }
 
 
+/* General styles for .center-container */
 .center-container {
     margin: 0 auto;
     width: 50%; /* Adjust the width as needed */
     max-width: 300px; /* This will help ensure it doesn't get too wide */
     text-align: center; /* Center the content inside */
 }
+
+/* Media query for mobile view */
+@media only screen and (max-width: 600px) {
+    .center-container {
+        margin: 0; /* Reset margin */
+        width: 100%; /* Full width */
+        max-width: none; /* Remove max-width restriction */
+        text-align: left; /* Reset text alignment */
+    }
+}
+
 
 

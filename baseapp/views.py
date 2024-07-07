@@ -11,6 +11,9 @@ def test(request):
 def about(request):
     return render(request, 'baseapp/about.html')
 
+def careers(request):
+    return render(request, 'baseapp/careers.html')
+
 def is_valid_phone(phone_number):
     # Regular expression to validate a basic 10-digit phone number
     pattern = r'^\d{10}$'

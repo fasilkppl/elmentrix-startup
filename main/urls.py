@@ -24,10 +24,13 @@ from django.conf.urls import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', baseappviews.test, name='index'),
+    path('', baseappviews.index, name='index'),
+    path('request-call/', baseappviews.request_call_view, name='request_call'),
     path('about/', baseappviews.about, name='about'),
     path('careers/', baseappviews.careers, name='careers'),
-    path('request-call/', baseappviews.request_call_view, name='request_call'),
+    path('register/', baseappviews.register_career, name='register_career'),
+    path('success/', baseappviews.career_success, name='career_success'),
+
 ]
 
 

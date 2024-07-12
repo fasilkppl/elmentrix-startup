@@ -4,15 +4,10 @@ from django.urls import reverse
 from .models import *
 import re
 from django.contrib import messages
+from .forms import *
 
-def test(request):
+def index(request):
     return render(request, 'baseapp/index.html')
-
-def about(request):
-    return render(request, 'baseapp/about.html')
-
-def careers(request):
-    return render(request, 'baseapp/careers.html')
 
 def is_valid_phone(phone_number):
     # Regular expression to validate a basic 10-digit phone number
@@ -38,3 +33,28 @@ def request_call_view(request):
     
     # Handle GET requests or initial page load here
     return render(request, 'baseapp/index.html')
+
+
+def about(request):
+    return render(request, 'baseapp/about.html')
+
+
+def careers(request):
+    return render(request, 'baseapp/careers.html')
+
+def register_career(request):
+    if request.method == 'POST':
+        form = CareerRegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('career_success')  # Redirect to the success view
+    else:
+        form = CareerRegistrationForm()
+    return render(request, 'baseapp/careers.html', {'form': form})
+
+def career_success(request):
+    # Redirect to the Google Form URL
+    google_form_url = "https://forms.gle/iDpkze3jqEGqkRS49"  # Replace with your Google Form URL
+    return HttpResponseRedirect(google_form_url)
+
+

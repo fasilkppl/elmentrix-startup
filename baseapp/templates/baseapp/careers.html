@@ -186,7 +186,7 @@ $(function () {
             <div class="d-grid contact-view">
 
                 <div class="cont-details ">
-                    <h3 class="sub-title">Wanna Work with Us ?</h3> 
+                    <h3 class="sub-title">Wanna Work with Us?</h3> 
                     <p class="para mt-3 mb-4">Are you passionate about making a difference? Join Our Team!</p>
                     <!--
                     <div class="cont-top ">
@@ -196,27 +196,31 @@ $(function () {
                                  #221DRS 75<br> West Rock,
                                  Maple Building, UK.</p>
                         </div>
-                    </div><div class="cont-top margin-up">
+					</div>
+					-->
+					<div class="cont-top margin-up">
                         <h6 class="mt-4 cont-left">Contact:</h6>
                         <div class="cont-right">
                             <p class="para mt-1"><a href="tel:+44 99 555 42">+123 45 67 89</a></p>
                             <p class="para"><a href="tel:+111 45 67 99">+111 45 67 99</a></p>
                         </div>
                     </div>
-					-->
+					<!--
                     <div class="cont-top margin-up">
                         <h6 class="mt-4 cont-left">Email:</h6>
                         <div class="cont-right">
                             <p class="para mt-1"><a href="mailto:example@mail.com" class="mail">example@mail.com</a></p>
                         </div>
                     </div>
+					-->
 
                 </div>
                 <div class="map-content-9 pl-lg-5 ">
-                    <form action="//sendmail.w3layouts.com/submitForm" method="post">
+                    <form action="{% url 'register_career' %}" method="post">
+						{% csrf_token %}
                         <div class="twice-two">
-                            <input type="text" class="form-control" name="w3lName" id="w3lName" placeholder="Name" required="">
-                            <input type="email" class="form-control" name="w3lSender" id="w3lSender" placeholder="Email" required="">
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Name" required="">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email" required="">
 						</div>
                             <!--
 							<input type="text" class="form-control" name="w3lSubject" id="w3lSubject" placeholder="Subject" required="">
@@ -224,14 +228,14 @@ $(function () {
                         <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Message" required=""></textarea>
 							-->
                         <div class="text-right">
-                            <button type="submit" class="btn btn-contact">Send Message</button>
+                            <button type="submit" class="btn btn-contact">Register</button>
                         </div>
                     </form>
                 </div>
             </div>
                 
             <div class="map-iframe mt-lg-5 mt-md-5 mt-sm-5 mt-4 pt-lg-2">
-                <iframe src="//www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317718.69319292053!2d-0.3817765050863085!3d51.528307984912544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a00baf21de75%3A0x52963a5addd52a99!2sLondon%2C+UK!5e0!3m2!1sen!2spl!4v1562654563739!5m2!1sen!2spl" width="100%" height="300" frameborder="0" style="border: 0px; pointer-events: none;" allowfullscreen=""></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.6520325387396!2d76.22809527344424!3d10.761278059476194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7c4821cd03507%3A0x16cd9f184da500fd!2sMalabar%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1720807131284!5m2!1sen!2sin" width="100%" height="300" frameborder="0" style="border: 0px; pointer-events: none;" allowfullscreen=""></iframe>
             </div>
         </div>
     </div>
@@ -290,8 +294,8 @@ $(function () {
 			<div class="bottom-copies row">
 				<p class="copy-footer-29 col-lg-8">© 2024 elmentriX. All rights reserved | Developed by <a href="https://www.instagram.com/fasil_kppl/">Co-founder Fasil</a>  <a href="https://www.instagram.com/fasil_kppl/"><i class="fa fa-instagram"></i></a></p>
 				<ul class="list-btm-29 col-lg-4">
-					<li><a href="#link">Privacy policy</a></li>
-					<li><a href="#link">Terms of service</a></li>
+					<li><a href="{% static 'assets\pdf\privacy_policy.pdf' %}" download>Privacy Policy</a></li>
+					<li><a href="{% static 'assets\pdf\terms.pdf' %}" download>Terms of Service</a></li>
 				</ul>
 			</div>
 			</div>
